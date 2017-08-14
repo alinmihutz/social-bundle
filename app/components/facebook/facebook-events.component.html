@@ -1,0 +1,29 @@
+<google-map (onMapClicked)="onMapClicked($event)"></google-map>
+<br/><br/>
+
+<div class="fb-events-form-container">
+    <form role="form" #searchEvent="ngForm" (submit)="searchEvents($event, searchEvent.value)" class="form-horizontal">
+        <input id="lat" type="hidden" value="{{lat}}" />
+        <input id="lng" type="hidden" value="{{lng}}" />
+        <slider name="distance" type="hidden" measureUnit="Km" orientation="horizontal" [defaultValue]="550" [min]="0" [max]="1000"></slider>
+        <br/>
+        <br/>
+        <slider name="limit" type="hidden" measureUnit="item(s)" orientation="horizontal" [defaultValue]="25" [min]="1" [max]="50"></slider>
+        <button type="submit" class="btn btn-primary btn-sm sb-mgtop-10">
+            <span>Search</span>
+        </button>
+    </form>
+</div>
+
+<div class="sb-fb-event-container" *ngFor="let event of events">
+    <div class="sb-fb-event">
+        <div class="sb-fb-event-cover"><img src="{{event.cover?.source}}"/></div>
+        <div class="sb-fb-event-details-container">
+            <div>{{stringAsDate(event.start_time) | date: 'medium'}}</div>
+
+            <div><a href="https://www.facebook.com/events/{{event.id}}/"><b>{{event.name}}</b></a></div>
+
+            <div><strong>{{event.attending_count}}</strong> people going</div>
+        </div>
+    </div>
+</div>

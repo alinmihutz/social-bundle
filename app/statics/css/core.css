@@ -1,0 +1,35 @@
+/* Core css */
+body{padding-top:70px;padding-bottom:70px;background-color:#fafafa;}
+/* Google maps */
+.sebm-google-map-container {height:400px;}
+/* Social bundle styles */
+.sb-center{align:text-center;}
+.sb-float-left{float:left;}
+.sb-clear-both{clear:both;}
+.sb-mgtop-10{margin-top:10px;}
+.sb-mgtop-15{margin-top:15px;}
+.sb-mgtop-20{margin-top:20px;}
+.sb-mgbottom-10{margin-bottom:10px;}
+.sb-social-login-container{width:450px !important;}
+.sb-valign{vertical-align:middle !important;}
+.sb-center{text-align:center !important;}
+.sb-cursor-pointer{cursor:pointer;text-decoration:none !important;}
+/* Tags */
+a{cursor:pointer;text-decoration:none !important;}
+/* Slider */
+.sb-slider-bubble-value{border:1px solid black;margin-left:-.6em;position:absolute;top:-2em;}
+/* Tabs */
+.sb-ul-tabs-container{list-style-type:none;padding:0px;margin-bottom:25px;}
+.sb-ul-tabs-container li{display:inline;margin-right:35px;}
+.sb-ul-tabs-container .active{border-bottom:1px solid dodgerblue;padding-bottom:10px;}
+/* FB Events */
+/* FB Posts */
+.sb-fb-posts-form-container{display:inline;}
+.sb-fb-posts-form-container div{margin-right:10px;}
+.sb-fb-posts-container{display:inline;}
+.sb-fb-posts-container .sb-float-left{margin-right:10px;}
+
+/* Custom container */
+.container-custom{width:320px !important}
+/* Custom buttons */
+.btn-custom{background-color:#3897f0 !important;border-color:#3897f0 !important;color:#fff !important;border-radius:3px !important;font-weight:600 !important;width:100% !important;margin-bottom:10px !important;}

@@ -1,0 +1,73 @@
+<div *ngIf="!authenticated">
+    <header></header>
+
+    <div class="container container-custom text-center">
+        <div class="sb-social-login-and-signup-container">
+            <button (click)="socialLogin('facebook')" type="button" class="btn btn-primary btn-custom btn-sm">
+                <span>
+                    <i class="sb-valign fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                    Log in with Facebook
+                </span>
+            </button>
+            <button (click)="socialLogin('instagram')" type="button" class="btn btn-primary btn-custom btn-sm">
+                <span>
+                    <i class="sb-valign fa fa-instagram fa-2x" aria-hidden="true"></i>
+                    Log in with Instagram
+                </span>
+            </button>
+            <button (click)="socialLogin('google')" type="button" class="btn btn-primary btn-custom btn-sm">
+                <span>
+                    <i class="sb-valign fa fa-google-plus-square fa-2x" aria-hidden="true"></i>
+                    Log in with Google &#8203;&#8203;&#8203;&#8203;&#8203;&#8203;
+                </span>
+            </button>
+            <button (click)="socialLogin('twitter')" type="button" class="btn btn-primary btn-custom btn-sm">
+                <span>
+                    <i class="sb-valign fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+                    Log in with Twitter &#8203;&#8203;
+                </span>
+            </button>
+        </div>
+
+        <div class="sb-login-delimitator">or</div>
+
+        <div class="sb-login-container">
+            <div *ngIf="showSocialLoginAndSignup">
+                <form role="form" #fsign="ngForm" (submit)="signIn($event, fsign.value)" class="form-horizontal">
+                    <div class="sb-mgtop-10"><input ngModel="email" name="email" type="email" class="form-control"/></div>
+                    <div class="sb-mgtop-10"><input ngModel="fullname" name="fullName" type="text" class="form-control"/></div>
+                    <div class="sb-mgtop-10"><input ngModel="username" name="userName" type="text" class="form-control"/></div>
+                    <div class="sb-mgtop-10 sb-mgbottom-10"><input ngModel="password" name="password" type="password" class="form-control"/></div>
+
+                    <button type="submit" class="btn btn-primary btn-custom btn-sm">
+                        <span>Sign up</span>
+                    </button>
+
+                    <div class="sb-init-login">
+                        <p>Have an account ?<a (click)="initLogIn()"> Log in</a></p>
+                    </div>
+                </form>
+            </div>
+            <div *ngIf="showLogin" class="sb-mgtop-10">
+                <form role="form" #f="ngForm" (submit)="login($event, f.value)" class="form-horizontal">
+                    <div class="sb-mgbottom-10">
+                        <input ngModel="email" name="email" type="email" class="form-control"/>
+                    </div>
+                    <div class="sb-mgbottom-10">
+                        <input ngModel="password" name="password" type="password" class="form-control"/>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-custom btn-sm">
+                        <span>Log in</span>
+                    </button>
+
+                    <div class="sb-init-signup">
+                        <p>Don't have an account ?<a (click)="initSignIn()"> Sign up</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+    <div>

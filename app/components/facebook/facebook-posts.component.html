@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row" *ngFor="let post of posts.getPosts()">
+        <div><img src="{{post.getUser().getPictureSrc()}}"/></div>
+        <div>{{post.getUser().getFullName()}}</div>
+
+        <div><i class="fa fa-facebook-square fa-2x" style="color:blue;"></i></div>
+
+        <div>{{post.createdTimeAsDate()}}</div>
+        <div>{{post.getMessage()}}</div>
+        <br/><br/>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row" *ngFor="let media of medias">
+        <div><img src="{{media.getUser().getPictureSrc()}}"/></div>
+        <div>{{media.getUser().getFullName()}}</div>
+
+        <i class="fa fa-instagram fa-2x" style="color:gray"></i>
+
+        <div>{{media.getCreatedTime()}}</div>
+        <div><img src="{{media.getOriginalImageUrl()}}"/></div>
+        <div>{{media.getCaptionText()}}</div>
+        <br/><br/>
+    </div>
+</div>

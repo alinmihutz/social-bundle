@@ -1,0 +1,5 @@
+/*Tabs*/
+.sb-tabs{border:0px;margin-left:0px;}
+.sb-tabs .sb-tab{cursor:pointer;margin-right:25px;padding-bottom:5px;margin-bottom:10px;}
+.sb-tab-contents{border:0px;margin-top:20px;}
+.sb-selected-tab{border-bottom: 1px solid dodgerblue;}

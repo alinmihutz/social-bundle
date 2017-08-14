@@ -1,0 +1,110 @@
+<div *ngIf="authenticated">
+    <header></header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <ng2-tab selected="main" selected-index-class="sb-selected-tab" selected-contents-class="fadeIn animated">
+                    <!-- Tabs -->
+                    <div class="sb-tabs">
+                        <span class="sb-tab" index="main">Main</span>
+                        <span class="sb-tab" index="timeline">Timeline</span>
+                        <span class="sb-tab" index="accounts">Accounts</span>
+                        <span *ngIf="loggedWith('facebook')" (click)="dispatchResizeEvent()" class="sb-tab" index="fb-events">Events</span>
+                    </div>
+                    <!-- /Tabs -->
+                    <!-- Tabs contents -->
+                    <div class="sb-tab-contents">
+                        <!-- Main -->
+                        <div contents="main">
+                            Currently logged as:
+                            <div *ngFor="let user of users">
+                                <div *ngIf="user !== null">
+                                    <span *ngIf="user.app == 'facebook'">
+                                        <i class="sb-valign fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                                    </span>
+                                        <span *ngIf="user.app == 'instagram'">
+                                         <i class="sb-valign fa fa-instagram fa-2x" aria-hidden="true"></i>
+                                    </span>
+                                        <span *ngIf="user.app == 'google'">
+                                        <i class="sb-valign fa fa-google-plus-square fa-2x" aria-hidden="true"></i>
+                                    </span>
+                                        <span *ngIf="user.app == 'twitter'">
+                                         <i class="sb-valign fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+                                    </span>
+                                    {{user.username}}
+                                </div>
+                            </div>
+                            <br/>
+                            <!-- social login -->
+                            <div *ngIf="!loggedWith('facebook')">
+                                <button (click)="socialLogin('facebook')" type="button" class="btn btn-primary btn-xs">
+                                <span>
+                                    <i class="sb-valign fa fa-facebook fa-1x" aria-hidden="true"></i>
+                                    Log in with facebook
+                                </span>
+                                </button>
+                            </div>
+                            <div *ngIf="!loggedWith('instagram')" class="sb-mgtop-10">
+                                <button (click)="socialLogin('instagram')" type="button" class="btn btn-primary btn-xs">
+                                <span>
+                                    <i class="sb-valign fa fa-instagram fa-1x" aria-hidden="true"></i>
+                                    Log in with instagram
+                                </span>
+                                </button>
+                            </div>
+                            <div *ngIf="!loggedWith('google')" class="sb-mgtop-10">
+                                <button (click)="socialLogin('google')" type="button" class="btn btn-primary btn-xs">
+                                <span>
+                                    <i class="sb-valign fa fa-google fa-1x" aria-hidden="true"></i>
+                                    Log in with google
+                                </span>
+                                </button>
+                            </div>
+                            <div *ngIf="!loggedWith('twitter')" class="sb-mgtop-10">
+                                <button (click)="socialLogin('twitter')" type="button" class="btn btn-primary btn-xs">
+                                <span>
+                                    <i class="sb-valign fa fa-twitter fa-1x" aria-hidden="true"></i>
+                                    Log in with twitter
+                                </span>
+                                </button>
+                            </div>
+                            <!-- /social login -->
+                        </div>
+                        <!-- /Main -->
+                        <!-- Timeline -->
+                        <div contents="timeline">
+                            <div *ngIf="loggedWith('facebook')">
+                                <fb-posts></fb-posts>
+                            </div>
+
+                            <div *ngIf="loggedWith('instagram')">
+                                <instagram-user-media></instagram-user-media>
+                            </div>
+                        </div>
+                        <!-- /Timeline -->
+                        <!-- Accounts -->
+                        <div contents="accounts">
+                            <div *ngFor="let user of users">
+                                <div *ngIf="user !== null">
+                                    <img src="{{user.picture_src}}"/>{{user.username}}({{user.app}})
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Accounts -->
+                        <!-- Search Events -->
+                        <div *ngIf="loggedWith('facebook')">
+                            <div contents="fb-events">
+                                <fb-events></fb-events>
+                            </div>
+                        </div>
+                        <!-- /Search Events -->
+                    </div>
+                    <!-- /Tabs contents -->
+                </ng2-tab>
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+</div>

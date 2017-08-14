@@ -1,0 +1,20 @@
+/* Header */
+header{background-color:#FFFFDF;}
+/* Custom navbar */
+.navbar-custom{background-color:#ffffff;border-bottom:1px solid #dbdbdb !important;}
+.navbar-custom .navbar-brand{height:58px;line-height:30px;padding:15px 20px;}
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {max-height: 750px !important;}
+.navbar-toggle{padding:12px 10px !important;}
+.navbar-custom .navbar-toggle{background-color:#ffffff;}
+.navbar-custom .icon-bar {background-color:#000000;}
+.navbar-custom .navbar-nav > li > a{color:#000;font-weight:600;}
+.navbar-custom .navbar-nav > li > a:hover, .nav > li > a:focus {text-decoration:none;background-color:#fff !important}
+/* Social login buttons */
+.sb-home-icon-link:hover i{color:#46b8da;}
+.sb-info-circle-icon-link:hover i{color:#46b8da;}
+.sb-twitter-icon-link:hover i{color:deepskyblue;}
+.sb-google-icon-link:hover i{color:red;}
+.sb-facebook-icon-link:hover i{color:darkblue;}
+.sb-instagram-icon-link:hover i{color:palevioletred;}
+.sb-sign-in-icon-link:hover i{color:#46b8da;}
+.sb-sign-out-icon-link:hover i{color:#46b8da;}

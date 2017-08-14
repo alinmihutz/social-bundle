@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>SocialBundle</title>
+        <base href="/">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Angular 2 SocialBundle">
+
+        <!-- 1. Load libraries -->
+        <!-- Css -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="/app/statics/css/bootstrap.css">
+        <link rel="stylesheet" href="/app/statics/css/core.css">
+
+        <!-- jQuery -->
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+        <!-- Polyfill(s) for older browsers -->
+        <script src="node_modules/core-js/client/shim.min.js"></script>
+        <script src="node_modules/zone.js/dist/zone.js"></script>
+        <script src="node_modules/reflect-metadata/Reflect.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
+        <!-- 2. Configure SystemJS -->
+        <script src="systemjs.config.js"></script>
+        <script>
+            System.import('app').catch(function(err){ console.error(err); });
+        </script>
+    </head>
+    <!-- 3. Display the application -->
+    <body>
+        <my-app>
+            <div class="sb-loading sb-center"><img src="/app/statics/img/ring-loader.gif" /></div>
+        </my-app>
+    </body>
+</html>
